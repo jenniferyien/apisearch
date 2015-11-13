@@ -3,6 +3,8 @@ var MainDiv = React.createClass({
   getInitialState: function(){
       return {movieData: []};
   },
+  //ajax call to omdbapi to get the movies based on the search data that is entered
+  //once search data is entered the result is stored in movieData
   loadMovies: function(title){
     $.ajax({
       url: 'https://www.omdbapi.com/',
@@ -16,9 +18,11 @@ var MainDiv = React.createClass({
       }
     })
   },
+  //show initial result of game of thrones
   componentDidMount: function(){
     this.loadMovies('game of thrones');
   },
+  //render using boostrap to disply data information that is grabbed from ajax call
   render: function(){
     return(
       <div>

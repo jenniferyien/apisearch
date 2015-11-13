@@ -3,6 +3,7 @@ var MainDiv = React.createClass({
   getInitialState: function(){
       return {songData: []};
   },
+  //ajax call from itunes api and setting the results to the data to songData
   loadMusic: function(music){
     $.ajax({
       url: 'https://itunes.apple.com/search',
@@ -17,9 +18,11 @@ var MainDiv = React.createClass({
       }
     })
   },
+  //loading initial search for taylor swift
   componentDidMount: function(){
     this.loadMusic('taylor swift');
   },
+  //bootstrap render of songData
   render: function(){
     return(
       <div>
